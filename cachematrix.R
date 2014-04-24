@@ -14,18 +14,20 @@ makeCacheMatrix <- function(x = matrix()) {
   inv_x <- NULL
   set <- function(m){
     x <<- m
+    #Inverse is not calculated here to avoid unnecessary first time computation
     inv_x <<- NULL
   }
   get <- function() x
   setInverse <- function(m) inv_x <<- m
   getInverse <- function() inv_x
+  #Return a list of methods on this instance
   list( set=set, get=get, 
         setInverse=setInverse, getInverse=getInverse)
 }
 
 
 ## Returns the inverse of an instance of makeCacheMatrix
-# If matrix inverse exists, its is not recomputed.
+# If matrix inverse exists, it is not recomputed.
 #>cacheSolve(cacheMat)
 
 cacheSolve <- function(x, ...) {
