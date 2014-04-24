@@ -1,14 +1,14 @@
 ## Caches a matrix and its inverse to avoid repeated recalculations
-# Create a cached matrix object of an existing matrix mat using
-# cacheMat <- makeCacheMatrix(mat)
+# Create a cached matrix object of an existing matrix 'mat' using
+#> cacheMat <- makeCacheMatrix(mat)
 # Get the inverse using
-# invMat <- cacheSolve(cacheMat)
+#> invMat <- cacheSolve(cacheMat)
 
-## Creates an instance of matrix and inverse and returns following methods
-# $set(m)       : Set a new cached matrix
-# $get()        : Returns the cached matrix
-# $setInverse(m): Sets the inverse of cached matrix
-# $getInverse() : Returns the cached inverse of matrix
+## Creates an instance of matrix and inverse and returns a list with following methods
+#obj$set(m)       : Set a new cached matrix
+#obj$get()        : Returns the cached matrix
+#obj$setInverse(m): Sets the inverse of cached matrix
+#obj$getInverse() : Returns the cached inverse of matrix
 
 makeCacheMatrix <- function(x = matrix()) {
   inv_x <- NULL
